@@ -1,10 +1,13 @@
 # Path variables
-#wd <- "."
+wd <- "." # Your working directory path
 setwd(wd)
 
 data_path <- paste(wd, "\\data\\UCI HAR Dataset", sep = "")
 train_path <- paste(data_path, "\\train", sep = "")
 test_path <- paste(data_path, "\\test", sep = "")
+results_path <- paste(wd, "\\data\\results", sep = "")
+
+if(!dir.exists(results_path)) {dir.create(results_path)}
 
 # Load data sets
 df_x_train <- read.csv(paste(train_path, "\\X_train.txt", sep = ""),
@@ -39,16 +42,8 @@ df_test  <- cbind(df_x_test, label = df_y_test$V1)
 
 df <- rbind(df_train, df_test)
 
-# Check that the dimensions match
-if((dim(df_x_train)[2] + dim(df_y_train)[2]) != 
-   dim(df_train)[2])
-{
-  stop("Dimensions of data frame do not match")
-}
+# Save result
+write.table(df, file = paste(results_path, "\\01-merged_df.txt",
+                             sep = ""))
 
-if(dim(df_x_test)[2] + dim(df_y_test)[2] !=
-   dim(df_test)[2])
-{
-  stop("Dimensions of data frame do not match")
-}
-
+print("Step 1 completed.")
