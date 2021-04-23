@@ -19,26 +19,9 @@ df_x_test <- read.csv(paste(test_path, "\\X_test.txt", sep = ""),
 df_y_test <- read.csv(paste(test_path, "\\Y_test.txt", sep = ""),
                       sep = "", header = FALSE)
 
-print("X train dim:")
-print(dim(df_x_train))
-print("Y train dim:")
-print(dim(df_y_train))
-print("X test dim:")
-print(dim(df_x_test))
-print("Y test dim:")
-print(dim(df_y_test))
-
-# Load names for data frames
-df_names <- read.csv(paste(data_path, "\\features.txt", sep = ""),
-                  sep = "", header = FALSE)
-df_names <- df_names$V2
-
-names(df_x_train) <- df_names
-names(df_x_test) <- df_names
-
 # Join data test and train data frames
-df_train <- cbind(df_x_train, label = df_y_train$V1)
-df_test  <- cbind(df_x_test, label = df_y_test$V1)
+df_train <- cbind(df_x_train, action=df_y_train$V1)
+df_test  <- cbind(df_x_test, action=df_y_test$V1)
 
 df <- rbind(df_train, df_test)
 
