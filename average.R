@@ -20,7 +20,12 @@ avg_group <- summarise(df_subject, across(everything(), mean))
 
 # Save table to file
 write.table(avg_group, file = paste(results_path, "\\05-group_avg.txt",
-                                    sep = ""))
+                                    sep = ""), row.name = FALSE)
+
+
+#load_df <- read.table(paste(results_path, "\\05-group_avg.txt",
+#                             sep = ""), header = TRUE)
+ 
 
 print("Step 5 completed.")
 
