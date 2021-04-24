@@ -20,13 +20,13 @@ df_y_test <- read.csv(paste(test_path, "\\Y_test.txt", sep = ""),
                       sep = "", header = FALSE)
 
 # Join data test and train data frames
-df_train <- cbind(df_x_train, action=df_y_train$V1)
-df_test  <- cbind(df_x_test, action=df_y_test$V1)
+df_train <- cbind(df_x_train, activity=df_y_train$V1)
+df_test  <- cbind(df_x_test, activity=df_y_test$V1)
 
 df <- rbind(df_train, df_test)
 
 # Save result
-write.table(df, file = paste(results_path, "\\01-merged_df.txt",
-                             sep = ""))
+#write.table(df, file = paste(results_path, "\\01-merged_df.txt",
+#                             sep = ""))
 
 print("Step 1 completed.")

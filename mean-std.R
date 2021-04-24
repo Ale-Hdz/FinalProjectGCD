@@ -18,6 +18,6 @@ filtered_indices <- c(avg_indices, std_indices)
 filtered_df <- df[,filtered_indices]
 
 # Save results
-write.table(filtered_df, file = paste(results_path, "\\02-filtered.txt",
-                                      sep = ""))
+#write.table(filtered_df, file = paste(results_path, "\\02-filtered.txt",
+#                                      sep = ""))
 print("Step 2 completed.")
