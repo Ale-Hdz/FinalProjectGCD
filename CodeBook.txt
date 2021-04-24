@@ -14,3 +14,9 @@ Project modifications:
   this information is originally stored in "subject_train.txt" file. This new data frame is grouped into
   activity and subject. Finally it is calculated the mean of each variable-activity-subject combination
   and the result is stored in "05-group_avg.txt" file.
+  
+Variables in 05-group_avg.txt:
+========
+* activity: String label for each row that indicates the action made by the subject.
+* subject: A numeric label that indicates the subject who did the specified action.
+
