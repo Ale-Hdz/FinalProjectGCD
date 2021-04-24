@@ -1,9 +1,3 @@
-# Set names in data frame
-names(df) <- c(df_names, "activity") 
-#write.table(df, file = paste(results_path,"\\03-df_names.txt",
-#                             sep = ""))
-print("Step 3 completed.")
-
 # Replace t by time
 df_names <- sapply(df_names, function(x){
   sub("tB","timeB", x)

@@ -14,6 +14,8 @@ source(".\\mean-std.R")
 
 # 3. Uses descriptive activity names to name 
 # the activities in the data set
+source(".\\activity_names.R")
+
 # 4. Appropriately labels the data set with
 # descriptive variable names. 
 source(".\\names.R")
