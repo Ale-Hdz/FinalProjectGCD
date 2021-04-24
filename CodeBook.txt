@@ -1,0 +1,16 @@
+Project modifications:
+========
+* Merged original X_train.txt, Y_train.txt, X_test.txt and Y_test.txt into one data set.
+* Original Y labels (1, 2, etc.) are replaced in the data set by their corresponding name activity.
+* 
+* Modifications made in the column names:
+	- Replaced t by time
+	- Replace f by freq
+	- Replace mad by median
+	- Replace Acc by Acceleration
+	- Create unique names by adding an enumeration to duplicated names
+
+* Create a second data set which incorporates the information the subject who did the specified activity,
+  this information is originally stored in "subject_train.txt" file. This new data frame is grouped into
+  activity and subject. Finally it is calculated the mean of each variable-activity-subject combination
+  and the result is stored in "05-group_avg.txt" file.
